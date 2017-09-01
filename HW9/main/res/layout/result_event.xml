@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <ListView
+        android:id="@+id/result_event"
+        android:layout_width="match_parent"
+        android:layout_height="480dp"
+        android:scrollbars="vertical">
+    </ListView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="visible"
+        android:id="@+id/eventbtn">
+
+        <Button
+            android:layout_width="205dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/eventprev"
+            android:enabled="false"
+            android:text="PREV" />
+
+        <Button
+            android:layout_width="205dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/eventnext"
+            android:enabled="true"
+            android:text="NEXT" />
+
+    </LinearLayout>
+
+</LinearLayout>
+
+

@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<Mainline>
+    <Table>
+        <Header>
+            <Data>Airline</Data>
+            <Data>IATA</Data>
+            <Data>Hubs</Data>
+            <Data></Data>
+            <Data>HomePage</Data>
+            <Data>Plane</Data>
+        </Header>
+    
+        <Row>
+            <Airline></Airline>
+            <IATA>     A   S    </IATA>
+            <Hubs>
+                
+            </Hubs>
+            <Notes>Founded as McGee Airways, and commenced operations in 1944 as Alaska Airlines. Plans have been made for Alaska Airlines to acquire Virgin America.</Notes>
+            <HomePage></HomePage>
+            <Plane>http://cs-server.usc.edu:45678/hw/hw4/Alaska_Airlines,_Boeing_737.jpg</Plane>
+        </Row>
+
+        <Row>
+            <Airline>American Airlines</Airline>
+            <IATA></IATA>
+            <Hubs>
+                <Hub>Dallas/Fort Worth</Hub>
+                <Hub>Char    lotte</Hub>
+                <Hub>Chicago-O’Hare</Hub>
+                <Hub>    Los Angeles     </Hub>
+                <Hub></Hub>
+                <Hub>Ne     w York-JFK</Hub>
+                <Hub>New York-LaGuardia</Hub>
+                <Hub></Hub>
+                <Hub>Phoenix</Hub>
+                <Hub>Washington-National</Hub>
+            </Hubs>
+            <Notes></Notes>
+            <HomePage>     http://www.aa.com/    </HomePage>
+            <Plane></Plane>
+        </Row>
+        
+        <Row>
+            <Airline></Airline>
+            <IATA></IATA>
+            <Hubs>
+                <Hub></Hub>
+            </Hubs>
+            <Notes></Notes>
+            <HomePage></HomePage>
+            <Plane></Plane>
+        </Row>
+
+    </Table>
+</Mainline>

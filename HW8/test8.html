@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">  
+<head>
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>
+      Homework8
+  </title>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>
+  <!--Latest compiled and minified CSS-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">  
+  
+  <!-- Optional theme-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <!-- Latest compiled and minified JavaScript-->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>  
+
+
+  <script src="test8.js"></script> 
+
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '1300301163391461',
+        xfbml      : true,
+        version    : 'v2.8'
+      });
+      FB.AppEvents.logPageView();
+    };
+
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "//connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+  <style type="text/css">
+    .glyphicon-star{
+      color:#FFD700;
+    }
+
+    .all.ng-hide{
+      width:0;
+    }
+
+    .all{
+      width:100%;
+      transition: all linear 1s;     
+    }
+
+    .det{
+      width:100%;
+      transition: all linear 1s;
+    }
+
+    .det.ng-hide{
+      width:0;
+    }
+
+
+  </style>
+  <script>
+    var app = angular.module("app",['ngAnimate']);
+
+    angular.module('app', ['ngAnimate']).controller('ctrltest',function($scope){
+            $scope.pro=false;
+            $scope.alb=false;
+            $scope.pos=false;
+            $scope.all=true;
+            $scope.det=true;
+            $scope.test = function(){
+              alert("show disappear");
+            }
+    })
+  </script>
+</head>  
+  
+<body > 
+<div id="app" ng-app="app"  ng-controller="ctrltest">
+
+  <div class="row" >
+    <div class="col-md-3 col-xs-12" style="background-color: #F4F4F4 ;position:relative; border:1px solid #e6e6e6; border-right:0px; height:60px;" >
+        <span style="position:relative; top:23%; left:5%;  display:inline-block; font-size:20px; color:#285F90;">
+          FB Search
+        </span>
+    </div>
+    <div class="col-md-9 col-xs-12" style="background-color: #F4F4F4 ;position:relative; border:1px solid #e6e6e6; height:60px; border-left:0px;">
+        <form id="form" action="" style="position:relative; top:18%; left:5%; width:60%; display:inline-block;">
+          <div class="input-group" style="display:inline-block; width:100%;">   
+            <input class="form-control" data-toggle="tooltip" data-placement="bottom" title="Please type a keyword" ng-modle="pro" type="text" name="key" id="keywd" style="display:inline-block; width:80%; border-radius:1px;" required placeholder="Type something...">
+            <!-- <button type="submit" id="submit" class="btn btn-primary" value="submit"></button>  -->
+           <!--onclick="query();" -->
+            <a href="#" class="btn btn-primary" style="width:20%;" onclick="query();"><span style="display:inline-block; height:19px;" class="glyphicon glyphicon-search"></span></a>    
+          </div>    
+        </form>  
+        <input type="button" style="position:relative; top:20%; left:8%;display:inline-block; border-radius: 2px; width:15%; height:34px; color:#285F90; border-color:#285F90; background:#ffffff;" value="Clear" onclick="{location.href='test8.html'}">   
+    </div> 
+  </div>
+
+  <div class="row">
+    <nav style="margin-bottom:0px;">
+      
+        <div id="type" value="user" style="position:relative; border-bottom: 2px solid #285F90; padding-left:0px; padding-right: 0px;">
+              <ul class="nav nav-pills nav-stakced" style="list-style-type:none; margin-bottom:0px; position: relative;  width:100%;" >
+                <div class="col-md-2 col-xs-12" style="padding-left: 0;padding-right: 0;">
+                  <li style="position: relative;top:15px;">                 
+                      <a  onclick="user();" ng-click="myCheck=!myCheck" href="javascript:void(0)" >
+                        <div id="user" style="position: relative; top:-15px; font-size:16px; text-align: center; height:55px; line-height: 53px; padding-left:0px; padding-right: 0px; color:#ffffff; background: #285F90;">Users</div>
+                      </a>
+                  </li>
+                </div> 
+                <div class="col-md-2 col-xs-12" style="padding-left: 0;padding-right: 0;">
+                  <li style="position: relative;top:15px;">
+                      <a onclick="page();" ng-click="myCheck=!myCheck" href="javascript:void(0)" >
+                        <div id="page" style="position: relative; top:-15px; position: relative; top:-15px; font-size:16px; text-align: center; height:55px; line-height: 53px; padding-left:0px; padding-right: 0px; color:#000000; background: #ffffff;">Pages</div>
+                      </a>                    
+                  </li>
+                </div>
+                <div class="col-md-2 col-xs-12" style="padding-left: 0;padding-right: 0;">
+                  <li style="position: relative;top:15px;">
+                      <a onclick="events();" ng-click="myCheck=!myCheck" href="javascript:void(0)">
+                        <div id="events" style="position: relative; top:-15px; font-size:16px; text-align: center; height:55px; line-height: 53px; padding-left:0px; padding-right: 0px; color:#000000; background: #ffffff;">Events</div>
+                      </a>
+                  </li>
+                </div>
+                
+                <div class="col-md-2 col-xs-12" style="padding-left: 0;padding-right: 0;">
+                  <li style="position: relative;top:15px;">
+                      <a onclick="place();" ng-click="myCheck=!myCheck" href="javascript:void(0)">
+                        <div id="place" style="position: relative; top:-15px; font-size:16px; text-align: center; height:55px; line-height: 53px; padding-left:0px; padding-right: 0px; color:#000000; background: #ffffff;">Places</div>
+                      </a>
+                  </li>
+                </div>
+                
+                <div class="col-md-2 col-xs-12" style="padding-left: 0;padding-right: 0;">
+                  <li style="position: relative;top:15px;">                 
+                      <a onclick="group();" ng-click="myCheck=!myCheck" href="javascript:void(0)">
+                        <div id="group" style="position: relative; top:-15px; font-size:16px; text-align: center; height:55px; line-height: 53px; padding-left:0px; padding-right: 0px; color:#000000; background: #ffffff;">Groups</div>
+                      </a>
+                  </li>
+                </div>
+                <div class="col-md-2 col-xs-12" style="padding-left: 0;padding-right: 0;">
+                  <li style="position: relative;top:15px;">
+                      <a onclick="fav();" ng-click="myCheck=!myCheck" href="javascript:void(0)">
+                        <div id="fav" style="position: relative; top:-15px; font-size:16px; text-align:center; height:55px; line-height: 53px; padding-left:0px; padding-right: 0px; color:#000000; background: #ffffff;">Favorites</div>
+                      </a>
+                  </li> 
+                </div> 
+              </ul>
+        </div>
+    </nav>
+  </div>
+
+
+  <div id="all" class="all" ng-show="all" style="display:block;">
+    <div style="padding-right: 10px; padding-left: 10px;">
+        <div ng-show="pro" class="progress" style="position: relative;top:200px; left:10%; width:80%;">
+          <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+            <span class="sr-only">45% Complete</span>
+          </div>
+        </div> 
+        <div id="result" class="table-responsive">
+        </div>   
+    </div>
+     <nav aria-label="...">
+      <ul class="pager" id="pager" >
+        <li id="pre" style="visibility:hidden;"><a id="prea" style="border-radius:5px;" href="#" onclick="ppage();">Previous</a></li>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <li id="next" style="visibility:hidden;"><a id="nexta" style="border-radius:5px;" href="#" onclick="npage();">&nbsp;&nbsp;&nbsp;Next&nbsp;&nbsp;&nbsp;</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div id="detailpage" class="det" ng-show="det">
+
+    <div id="back" style="display:none;">
+      <button type='button' onclick='back();' style='position:relative; border-radius:1px; top:10px;left:8%; height:30px;'>
+        <span class='glyphicon glyphicon-chevron-left'></span>Back
+      </button>
+      <button type='button' onclick='star(30);' style='position:relative; border-radius:1px; left:70%; top:10px; width:37px; height:30px;'>
+        <span id='star30' class=''></span>
+      </button>
+      <button type='button' onclick='share();' style='border:1px solid #D2D2D2; border-radius:1px;  position: relative; top:5px; left:71%; height:30px; width:30px; background-image:url(facebook.png); background-size:100% 100%;'>
+      </button> 
+      <br /><br />
+    </div>
+
+    <div style="padding-right: 25px; padding-left: 25px;">
+      <div class='col-md-6' id="acol" style="display: none;">
+        <div class='panel panel-default'>
+          <div class='panel-heading'>Albums</div>
+          <div class='panel-body'>
+            <div ng-show="alb" class="progress" style="position: relative; top:10px;">
+              <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+                <span class="sr-only">45% Complete</span>
+              </div>
+            </div>
+            <div  id="albums">
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <div class='col-md-6' id="pcol" style="display: none;">
+        <div class='panel panel-default'>
+          <div class='panel-heading'>Posts</div>
+          <div class='panel-body'>
+            <div ng-show="pos" class="progress" style="position: relative; top:10px;">
+              <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+                <span class="sr-only">45% Complete</span>
+              </div>
+            </div>
+            <div  id="posts">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>  
+</html>  
+
+
+
